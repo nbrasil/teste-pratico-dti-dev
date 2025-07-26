@@ -1,0 +1,70 @@
+.navbarContainer{
+    display: flex; /*horizontal*/
+    align-items: center; /*centraliza tudo dentro do container no centro*/
+    background-color: #FFF1E1;
+    height: 96px;
+}
+
+.logo{
+    width: 4em;
+}
+
+.navbarItems{
+    display: flex; /*horizontal*/
+    justify-content: space-between; /*maior espaçamento entre os itens*/
+    align-items: center;
+    width: 100%;
+    max-width: 1280px; /*largura máxima do container*/
+    margin: 0 auto; /*sem margem top-bottom e centralizado left-right*/
+
+}
+
+.navbarLink{
+    color: #3B2F2F;
+}
+
+.navbarLinksContainer {
+    display: flex; /*horizontal*/
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+/* config mobile */
+
+.mobileNavbarBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    font-size: xx-large;
+    padding: 0.5em;
+}
+
+.mobileNavbarItems{
+    display: none; /*escondido por padrão*/
+}
+
+.drawer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2em;
+    gap: 2em;
+    background-color: #FFF1E1;
+    font-size: x-large;
+}
+
+@media screen and (max-width: 600px) {
+    .navbarItems{
+        display: none;
+    }
+    .mobileNavbarItems{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
