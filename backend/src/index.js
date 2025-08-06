@@ -1,46 +1,29 @@
-import express from 'express'
-import cors from 'cors'
-import { Mongo } from './database/mongo.js'
-import { config } from 'dotenv'
-import authRouter from './auth/auth.js'
-import passport from 'passport'
-import usersRouter from './routes/users.js'
-import platesRouter from './routes/plates.js'
-import ordersRouter from './routes/orders.js'
+const express = require('express');
+const cors = require('cors');
+// Importa a configuração do banco de dados para inicializá-lo
+require('./database/db'); 
 
-config()
+// código básico do Express para criar o servidor e fazê-lo "escutar" por requisições.
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-async function main() {
-    const hostname = 'localhost'
-    const port = 3000
+// Middlewares essenciais
+app.use(cors()); // Permite que o frontend acesse a API
+app.use(express.json()); // Permite que a API entenda requisições com corpo em JSON
 
-    const app = express()
+// Rotas (vamos criar os arquivos a seguir)
+const droneRoutes = require('./routes/droneRoutes');
+const pedidoRoutes = require('./routes/pedidoRoutes');
+const entregaRoutes = require('./routes/entregaRoutes');
+const vooRoutes = require('./routes/vooRoutes');
+const obstaculoRoutes = require('./routes/obstaculoRoutes');
 
-    const mongoConnection = await Mongo.connect({mongoConnectionString: process.env.MONGO_CS,
-                                                mongoDbName: process.env.MONGO_DB_NAME})
-    console.log(mongoConnection)                                            
+app.use('/api', obstaculoRoutes);
+app.use('/api', vooRoutes);
+app.use('/api', entregaRoutes);
+app.use('/api', droneRoutes);
+app.use('/api', pedidoRoutes);
 
-    app.use(express.json()) 
-    app.use(cors())
-    app.use(passport.initialize())
-
-    app.get('/', (req, res) => {
-        res.send({
-            success: true,
-            statuscode: 200,
-            body: 'Welcome to MyGastronomy'
-        })
-    })
-
-    //routes
-    app.use('/auth', authRouter)
-    app.use('/users', usersRouter)
-    app.use('/plates', platesRouter)
-    app.use('/orders', ordersRouter)
-
-    app.listen(port, () => {
-        console.log(`Server running on: http://${hostname}:${port}`)
-    })
-}
-
-main()
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});

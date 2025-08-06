@@ -1,0 +1,27 @@
+/* src/components/DeliveryQueue.css */
+.queue-container {
+    padding: 20px;
+}
+
+.queue-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.queue-container li {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* Cores por prioridade */
+.prioridade-alta {
+    border-left: 5px solid #dc3545; /* Vermelho */
+}
+.prioridade-media {
+    border-left: 5px solid #ffc107; /* Amarelo */
+}
+.prioridade-baixa {
+    border-left: 5px solid #28a745; /* Verde */
+}

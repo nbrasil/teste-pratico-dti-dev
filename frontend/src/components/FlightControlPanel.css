@@ -1,0 +1,53 @@
+/* src/components/FlightControlPanel.css */
+.flight-panel-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.flight-list {
+    max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flight-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.flight-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    color: white;
+    font-weight: bold;
+}
+
+.status-pendente { background-color: #ffc107; color: #333 }
+.status-em.andamento { background-color: #007bff; } /* Usado no CSS como status-em */
+
+.flight-actions button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.start-btn { background-color: #28a745; }
+.start-btn:hover { background-color: #218838; }
+
+.end-btn { background-color: #dc3545; }
+.end-btn:hover { background-color: #c82333; }

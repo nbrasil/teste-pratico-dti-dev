@@ -1,0 +1,27 @@
+/* src/components/SimulationControl.css */
+.simulation-control-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.simulation-control-container button {
+    font-size: 1em;
+}
+
+.clear-button {
+    background-color: #6c757d;
+}
+.clear-button:hover {
+    background-color: #5a6268;
+}
+
+.simulation-message {
+    margin: 0;
+    font-style: italic;
+    color: #333;
+}

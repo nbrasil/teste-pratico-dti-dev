@@ -1,0 +1,113 @@
+
+--------- Meu primeiro passo com a IA foi criar um cronograma para quebrar a criação do case em pequenas tarefas, para assim organizar o desenvolvimento
+
+Tecnologias
+Backend: Node.js com Express.js (para a API RESTful)
+
+Frontend: React (para a interface do usuário)
+
+Banco de Dados: SQLite ou um banco de dados em memória como o NeDB para simplicidade, evitando a necessidade de configuração complexa.
+
+Dia 1: Foco no Backend e na Lógica Principal
+O objetivo do primeiro dia é construir a fundação do sistema: a API que gerencia os dados e a lógica de alocação de entregas.
+
+Manhã (4 horas)
+
+Tarefa 1: Configuração do Ambiente do Backend (30 minutos)
+
+[Task] Iniciar um novo projeto Node.js (npm init).
+
+[Task] Instalar as dependências essenciais: Express.js, cors (para permitir a comunicação com o frontend) e uma biblioteca para o banco de dados (ex: sqlite3 ou nedb).
+
+[Task] Estruturar as pastas do projeto (ex: src, routes, controllers, models).
+
+Tarefa 2: Modelagem dos Dados (1 hora)
+
+[Task] Criar o modelo de dados para Drone (id, capacidade_kg, alcance_km, status, bateria).
+
+[Task] Criar o modelo de dados para Pedido (id, localizacao_x, localizacao_y, peso_kg, prioridade, status).
+
+[Task] Criar o modelo de dados para Voo ou Entrega (id, drone_id, lista_de_pedidos, rota, status).
+
+Tarefa 3: Implementação dos Endpoints da API - CRUD Básico (2 horas e 30 minutos)
+
+[Task] Criar o endpoint POST /pedidos para receber novos pedidos e salvá-los no banco de dados com o status "Aguardando Alocação".
+
+[Task] Criar o endpoint GET /drones/status para listar todos os drones e seus estados atuais (Idle, Carregando, Em voo, etc.).
+
+[Task] Criar o endpoint GET /pedidos para listar todos os pedidos pendentes e em andamento.
+
+Tarde (4 horas)
+
+Tarefa 4: Desenvolvimento do Algoritmo de Alocação (3 horas)
+
+[Task] Criar uma função para buscar pedidos na fila, ordenando por prioridade (alta > média > baixa) e, em seguida, por tempo de chegada.
+
+[Task] Desenvolver a lógica para encontrar o "melhor drone" para um conjunto de pedidos. Inicialmente, pode ser um drone ocioso com capacidade e alcance suficientes.
+
+[Task] Implementar a lógica de combinação de pacotes: agrupar múltiplos pedidos em uma única viagem, garantindo que a soma dos pesos não exceda a capacidade do drone e que a distância total da rota não ultrapasse seu alcance.
+
+[Task] Criar uma função para calcular a distância de uma rota (ex: Distância Euclidiana ou de Manhattan para a malha 2D).
+
+Tarefa 5: Simulação de Estados e Bateria (1 hora)
+
+[Task] Implementar a lógica de mudança de estado dos drones (Idle -> Em voo -> Retornando -> Idle).
+
+[Task] Criar uma função para simular o consumo de bateria com base na distância percorrida.
+
+[Task] Desenvolver o endpoint GET /entregas/rota que irá acionar o algoritmo de alocação e retornar a rota planejada.
+
+Dia 2: Foco no Frontend e na Integração
+O segundo dia é dedicado a criar uma interface para interagir com a API, visualizar os dados e simular o sistema em tempo real.
+
+Manhã (4 horas)
+
+Tarefa 1: Configuração do Ambiente do Frontend (30 minutos)
+
+[Task] Criar um novo projeto React usando create-react-app.
+
+[Task] Instalar o axios para fazer as requisições HTTP para o backend.
+
+[Task] Estruturar as pastas do projeto (ex: src/components, src/services, src/pages).
+
+Tarefa 2: Criação dos Componentes de UI (1 hora e 30 minutos)
+
+[Task] Desenvolver um componente de formulário (PedidoForm.js) para enviar novos pedidos (localização, peso, prioridade).
+
+[Task] Criar um componente de painel (DroneStatusDashboard.js) para exibir a lista de drones e seus status em tempo real.
+
+[Task] Criar um componente (DeliveryQueue.js) para visualizar a fila de pedidos pendentes.
+
+Tarefa 3: Integração com a API - Submissão e Visualização (2 horas)
+
+[Task] Conectar o PedidoForm.js ao endpoint POST /pedidos da API.
+
+[Task] No DroneStatusDashboard.js, fazer uma chamada periódica (usando setInterval) ao endpoint GET /drones/status para atualizar as informações.
+
+[Task] Conectar o DeliveryQueue.js ao endpoint GET /pedidos para mostrar os pedidos que aguardam entrega.
+
+Tarde (4 horas)
+
+Tarefa 4: Visualização da Rota e Simulação (2 horas e 30 minutos)
+
+[Task] Criar uma página ou um modal para exibir a rota de entrega retornada pelo endpoint GET /entregas/rota.
+
+[Task] Desenvolver uma representação visual simples da malha 2D da cidade, mostrando a base, os locais de entrega e o caminho do drone.
+
+[Task] Adicionar um botão "Iniciar Simulação" que chama o GET /entregas/rota e exibe os resultados.
+
+Tarefa 5: Funcionalidades Avançadas e Refinamento (1 hora)
+
+[Task] Implementar o cálculo e a exibição do tempo total de entrega estimado.
+
+[Task] Adicionar feedback visual para o usuário (ex: notificações de "Pedido criado com sucesso!").
+
+[Task] (Bônus) Adicionar a lógica de "obstáculos" no backend. O frontend pode apenas visualizar essas zonas de exclusão no mapa.
+
+Tarefa 6: Testes e Revisão Final (30 minutos)
+
+[Task] Realizar testes ponta a ponta: criar um pedido no frontend, verificar se foi salvo no backend, iniciar a simulação e observar a atualização do status do drone.
+
+[Task] Revisar o código e garantir que os requisitos principais foram atendidos.
+
+

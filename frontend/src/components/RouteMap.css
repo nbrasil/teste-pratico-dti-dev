@@ -1,0 +1,63 @@
+.route-map-container {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+
+    aspect-ratio: 1 / 1; /* Força o container a ser um quadrado perfeito */
+    max-height: 600px;   /* Define uma altura máxima para telas grandes */
+
+    overflow: hidden;
+}
+
+.route-map-svg {
+    width: 90%;
+    height: 80%;
+    border: 1px solid #eee;
+}
+
+.axis {
+    stroke: #e0e0e0;
+    stroke-width: 0.5;
+}
+
+.base-point {
+    fill: black;
+}
+
+.base-text {
+    font-size: 5px;
+    fill: #333;
+}
+
+.route-line {
+    fill: none;
+    stroke-width: 1;
+    stroke-dasharray: 4 2; /* Linha tracejada */
+}
+
+.delivery-point {
+    stroke: white;
+    stroke-width: 0.5;
+}
+
+.route-info-text {
+    font-size: 4px;
+    font-weight: bold;
+    fill: #333;
+}
+
+
+.obstacle-zone {
+    fill: #dc3545;
+    opacity: 0.3;
+}
+
+.obstacle-text {
+    font-size: 5px;
+    fill: #dc3545;
+    text-anchor: middle; /* Centraliza o texto no ponto */
+    font-weight: bold;
+}
+
