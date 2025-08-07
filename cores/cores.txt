@@ -1,9 +1,0 @@
-| Função no site               | Cor (hex) | Descrição                                        |
-| ---------------------------- | --------- | ------------------------------------------------ |
-| **Fundo principal**          | `#FFF8F0` | Bege clarinho, quente e acolhedor                |
-| **Fundo secundário (cards)** | `#FFF1E1` | Tom levemente mais quente para contrastes suaves |
-| **Texto primário**           | `#3B2F2F` | Marrom escuro elegante, fácil leitura            |
-| **Texto secundário**         | `#755C4B` | Marrom médio, amigável e moderno                 |
-| **Cor de destaque**          | `#E94E1B` | Vermelho vibrante inspirado nas chamas do logo   |
-| **Botões/links hover**       | `#FF8552` | Laranja queimado para interatividade             |
-| **Detalhes/ícones**          | `#D3A87C` | Tom amadeirado sofisticado                       |
