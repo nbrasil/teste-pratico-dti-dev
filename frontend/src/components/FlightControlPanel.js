@@ -8,7 +8,6 @@ function FlightControlPanel() {
 
     const fetchActionableFlights = useCallback(async () => {
         try {
-            // Usa o novo parâmetro da API
             const response = await api.get('/voos?status=actionable');
             setFlights(response.data);
         } catch (error) {
@@ -42,7 +41,7 @@ function FlightControlPanel() {
             toast.success(`Voo #${flightId} finalizado com sucesso!`);
             fetchActionableFlights();
         } catch (error) {
-            console.error('Erro detalhado ao finalizar voo:', error); // Adicione um log de erro mais detalhado
+            console.error('Erro detalhado ao finalizar voo:', error); 
             toast.error(`Erro ao finalizar voo #${flightId}.`);
         }
     };

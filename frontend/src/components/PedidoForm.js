@@ -1,18 +1,17 @@
-// src/components/PedidoForm.js
 
 import React, { useState } from 'react';
 import './PedidoForm.css';
-import api from '../services/api'; // 1. Importar nossa instância da API
+import api from '../services/api'; 
 import { toast } from 'react-toastify';
 
-// Adicionamos a prop onPedidoCriado para notificar o componente pai
+// prop onPedidoCriado para notificar o componente pai
 function PedidoForm({ onPedidoCriado }) { 
     const [localizacaoX, setLocalizacaoX] = useState('');
     const [localizacaoY, setLocalizacaoY] = useState('');
     const [peso, setPeso] = useState('');
     const [prioridade, setPrioridade] = useState('baixa');
 
-    const handleSubmit = async (event) => { // 2. Transformar em async
+    const handleSubmit = async (event) => {
         event.preventDefault();
         
         const novoPedido = {
@@ -22,9 +21,9 @@ function PedidoForm({ onPedidoCriado }) {
             prioridade: prioridade,
         };
 
-        // 3. Usar um try...catch para lidar com sucesso e erro
+        
         try {
-            await api.post('/pedidos', novoPedido); // 4. Fazer a chamada POST
+            await api.post('/pedidos', novoPedido); 
             toast.success('Pedido criado com sucesso!');
             
             // Limpa o formulário
@@ -51,7 +50,7 @@ function PedidoForm({ onPedidoCriado }) {
         }
     };
 
-    // O JSX do return continua o mesmo...
+    
     return (
         <div className="pedido-form-container">
             <h2>Criar Novo Pedido</h2>

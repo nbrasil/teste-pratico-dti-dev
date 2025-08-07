@@ -11,14 +11,14 @@ function SimulationControl({ onSimulationComplete, onClear }) {
         setMessage('Alocando entregas...');
         
         try {
-            // 1. Aciona o algoritmo de alocação no backend
+            // Aciona o algoritmo de alocação no backend
             const alocacaoResponse = await api.post('/entregas/alocar');
             setMessage(alocacaoResponse.data.message || 'Alocação concluída. Buscando rotas...');
             
-            // 2. Busca os voos que foram criados
+            // Busca os voos que foram criados
             const voosResponse = await api.get('/voos');
             
-            // 3. Passa os dados dos voos para o componente pai (App.js)
+            // Passa os dados dos voos para o componente pai (App.js)
             onSimulationComplete(voosResponse.data);
             
         } catch (error) {

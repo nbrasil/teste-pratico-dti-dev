@@ -58,7 +58,7 @@ async function alocarVoos() {
             const idsPedidos = cargaAtual.map(p => p.id);
             const rota = cargaAtual.map(p => ({ x: p.localizacao_x, y: p.localizacao_y }));
             
-            // ======================= INÍCIO DO DIAGNÓSTICO DE VOO =======================
+           
             console.log("\n================= INÍCIO DO DIAGNÓSTICO DE VOO =================");
             
             const distanciaTotal = calcularDistanciaTotalRota(cargaAtual);
@@ -76,7 +76,7 @@ async function alocarVoos() {
                 console.error("[ERRO FATAL] O valor de 'tempoEstimadoMinutos' é NaN. O voo será salvo com tempo NULL.");
             }
             console.log("================= FIM DO DIAGNÓSTICO DE VOO =================\n");
-            // ======================= FIM DO DIAGNÓSTICO DE VOO ========================
+            
 
             await dbRun(
                 "INSERT INTO voos (drone_id, lista_de_pedidos, rota, status, tempo_estimado_minutos) VALUES (?, ?, ?, ?, ?)",

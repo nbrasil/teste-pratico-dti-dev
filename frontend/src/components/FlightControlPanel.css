@@ -1,4 +1,4 @@
-/* src/components/FlightControlPanel.css */
+
 .flight-panel-container {
     background-color: #f8f9fa;
     padding: 20px;
@@ -39,7 +39,7 @@
 }
 
 .status-pendente { background-color: #ffc107; color: #333 }
-.status-em.andamento { background-color: #007bff; } /* Usado no CSS como status-em */
+.status-em.andamento { background-color: #007bff; } 
 
 .flight-actions button {
     padding: 8px 12px;

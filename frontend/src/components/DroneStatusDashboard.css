@@ -27,7 +27,6 @@
 }
 
 
-/* Em telas muito pequenas, diminui o padding e o espaçamento */
 @media (max-width: 480px) {
     .dashboard-container {
       padding: 10px;

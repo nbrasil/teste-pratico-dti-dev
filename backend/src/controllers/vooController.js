@@ -16,7 +16,6 @@ exports.iniciarVoo = async (req, res) => {
         // Atualiza status do drone, do voo e dos pedidos
         await dbRun("UPDATE drones SET status = 'Em voo' WHERE id = ?", [voo.drone_id]);
         await dbRun("UPDATE voos SET status = 'Em andamento' WHERE id = ?", [id]);
-        // dentro de iniciarVoo
         await dbRun(`UPDATE pedidos SET status = ? WHERE id IN (${placeholders})`, ['Em transito', ...idsPedidos]);
 
         res.status(200).json({ message: `Voo #${id} iniciado. Drone #${voo.drone_id} está em trânsito.` });
@@ -36,7 +35,7 @@ exports.finalizarVoo = async (req, res) => {
 
         const drone = (await dbAll('SELECT * FROM drones WHERE id = ?', [voo.drone_id]))[0];
         if (!drone) {
-            // Se o drone associado ao voo não for encontrado, retorne um erro claro.
+            // Se o drone associado ao voo não for encontrado, retorna um erro claro.
             return res.status(404).json({ error: `Drone com ID ${voo.drone_id} associado a este voo não foi encontrado.` });
         }
 

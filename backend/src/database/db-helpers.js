@@ -16,7 +16,7 @@ exports.dbAll = (sql, params = []) => {
 // Função que "promissifica" o db.run
 exports.dbRun = (sql, params = []) => {
     return new Promise((resolve, reject) => {
-        db.run(sql, params, function (err) { // Usamos function para ter acesso ao 'this'
+        db.run(sql, params, function (err) { // function para ter acesso ao 'this'
             if (err) {
                 reject(err);
             } else {

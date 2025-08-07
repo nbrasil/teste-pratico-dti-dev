@@ -5,9 +5,9 @@ import api from '../services/api';
 
 
 function DroneStatusDashboard() {
-    // Começamos com um array vazio
+    // array vazio
     const [drones, setDrones] = useState([]);
-    // Usamos useEffect para buscar dados quando o componente monta e depois periodicamente
+    // useEffect para buscar dados quando o componente monta e depois periodicamente
     useEffect(() => {
         const fetchDrones = async () => {
             try {
@@ -41,7 +41,7 @@ function DroneStatusDashboard() {
             default: return 'gray';
         }
     };
-    // ... a função getStatusColor e o JSX do return continuam os mesmos
+
     return (
         <div className="dashboard-container">
             <h2>Status dos Drones</h2>

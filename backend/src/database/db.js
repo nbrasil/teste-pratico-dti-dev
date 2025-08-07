@@ -10,7 +10,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         console.error('Erro ao abrir o banco de dados:', err.message);
     } else {
         console.log('Conectado ao banco de dados SQLite.');
-        // Usamos serialize para garantir que os comandos sejam executados em ordem
+        // serialize para garantir que os comandos sejam executados em ordem
         db.serialize(() => {
             // Cria a tabela de Drones se ela não existir
             db.run(`

@@ -5,8 +5,8 @@
     border-radius: 8px;
     background-color: #fdfdfd;
 
-    aspect-ratio: 1 / 1; /* Força o container a ser um quadrado perfeito */
-    max-height: 600px;   /* Define uma altura máxima para telas grandes */
+    aspect-ratio: 1 / 1; 
+    max-height: 600px;   
 
     overflow: hidden;
 }
@@ -34,7 +34,7 @@
 .route-line {
     fill: none;
     stroke-width: 1;
-    stroke-dasharray: 4 2; /* Linha tracejada */
+    stroke-dasharray: 4 2; 
 }
 
 .delivery-point {
@@ -57,7 +57,7 @@
 .obstacle-text {
     font-size: 5px;
     fill: #dc3545;
-    text-anchor: middle; /* Centraliza o texto no ponto */
+    text-anchor: middle; 
     font-weight: bold;
 }
 

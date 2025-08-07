@@ -9,12 +9,12 @@ import RouteMap from './components/RouteMap';
 import api from './services/api';
 import { ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
-import FlightControlPanel from './components/FlightControlPanel'; // 1. Importar
+import FlightControlPanel from './components/FlightControlPanel'; 
 
 
 function App() {
   const [queue, setQueue] = useState([]);
-  const [voos, setVoos] = useState([]); // 3. Estado para os voos/rotas
+  const [voos, setVoos] = useState([]); 
   const [obstaculos, setObstaculos] = useState([]);
 
   const fetchPedidos = useCallback(async () => {
@@ -35,17 +35,17 @@ function App() {
     }
   }, []);
 
-  // 3. CHAMAR A NOVA FUNÇÃO NO useEffect
+ 
   useEffect(() => {
     fetchPedidos();
-    fetchObstaculos(); // Chamar aqui
+    fetchObstaculos(); 
   }, [fetchPedidos, fetchObstaculos]);
 
   useEffect(() => {
     fetchPedidos();
   }, [fetchPedidos]);
 
-  // 4. Função para ser chamada quando a simulação terminar
+  // Função para ser chamada quando a simulação terminar
   const handleSimulationComplete = (voosData) => {
     setVoos(voosData);
     fetchPedidos(); // Atualiza a fila de pedidos também

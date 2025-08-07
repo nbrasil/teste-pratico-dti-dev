@@ -5,7 +5,7 @@ import './RouteMap.css';
 const ROUTE_COLORS = ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#1abc9c'];
 
 function RouteMap({ voos = [], obstaculos = []  }) {
-    // Definimos o tamanho da nossa "caixa de visualização" para o SVG.
+    //  tamanho da "caixa de visualização" para o SVG.
     // Isso cria um plano cartesiano com o centro em (0,0).
     const viewBox = "-100 -100 200 200";
 

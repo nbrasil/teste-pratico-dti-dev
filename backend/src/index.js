@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors()); // Permite que o frontend acesse a API
 app.use(express.json()); // Permite que a API entenda requisições com corpo em JSON
 
-// Rotas (vamos criar os arquivos a seguir)
+// Rotas 
 const droneRoutes = require('./routes/droneRoutes');
 const pedidoRoutes = require('./routes/pedidoRoutes');
 const entregaRoutes = require('./routes/entregaRoutes');

@@ -1,6 +1,5 @@
 const { dbAll } = require('../database/db-helpers');
 
-// Função para listar todos os obstáculos
 exports.listarObstaculos = async (req, res) => {
     try {
         const sql = 'SELECT * FROM obstaculos';

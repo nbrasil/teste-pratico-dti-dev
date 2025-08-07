@@ -34,7 +34,7 @@ function calcularDistanciaTotalRota(pontos){
             y: ponto.localizacao_y !== undefined ? ponto.localizacao_y : ponto.y
         };
 
-        // Adicionamos uma verificação de segurança para o caso de o ponto ser inválido
+        // verificação de segurança para o caso de o ponto ser inválido
         if (proximoPonto.x === undefined || proximoPonto.y === undefined) {
             console.error('Ponto inválido encontrado na rota:', ponto);
             return NaN; // Retorna NaN para deixar o erro claro se algo der muito errado
@@ -56,9 +56,13 @@ const CONSUMO_BATERIA_POR_KM = 0.2; // 0.2% de bateria por km percorrido
  * @param {Array<{localizacao_x: number, localizacao_y: number}>} rota
  * @returns {number}
  */
-exports.calcularBateriaConsumida = (rota) => {
+function calcularBateriaConsumida(rota) {
     const distanciaTotal = calcularDistanciaTotalRota(rota);
     return Math.round(distanciaTotal * CONSUMO_BATERIA_POR_KM);
 };
 
-exports = {VELOCIDADE_DRONE_KMH};
+module.exports = {
+    calcularDistanciaTotalRota,
+    calcularBateriaConsumida,
+    VELOCIDADE_DRONE_KMH
+};
