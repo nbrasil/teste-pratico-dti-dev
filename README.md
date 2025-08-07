@@ -1,7 +1,7 @@
-Simulador de Logística de Drones
+# Simulador de Logística de Drones
 Este é um projeto full-stack que simula um sistema de logística para entregas urbanas utilizando drones. A aplicação consiste em um backend Node.js que gerencia a lógica de alocação de pacotes e um frontend em React que oferece uma interface para criar pedidos e visualizar as operações em tempo real.
 
-✨ Funcionalidades
+# ✨ Funcionalidades
 Criação de Pedidos: Interface para cadastrar novos pedidos com localização, peso e prioridade.
 
 Algoritmo de Alocação Inteligente: O backend agrupa pacotes em voos otimizados, respeitando a capacidade de peso e o alcance de cada drone, e priorizando as entregas mais urgentes.
@@ -16,7 +16,7 @@ Validação de Negócio: O sistema impede o cadastro de pedidos em localizaçõe
 
 Teste unitário: em geometry.js, testando o cálculo das rotas.
 
-🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 Backend:
 
 Node.js: Ambiente de execução JavaScript no servidor.
@@ -39,14 +39,14 @@ React Toastify: Para exibir notificações elegantes na interface.
 
 CSS: Estilização com abordagem "Mobile-First" para responsividade.
 
-📁 Estrutura do Repositório
+# 📁 Estrutura do Repositório
 Este é um monorepo, contendo as duas partes da aplicação na mesma estrutura de pastas:
 
 /backend: Contém toda a lógica do servidor, API e banco de dados.
 
 /frontend: Contém toda a aplicação React e a interface do usuário.
 
-🚀 Como Rodar o Projeto Localmente
+# 🚀 Como Rodar o Projeto Localmente
 Siga os passos abaixo para configurar e executar a aplicação na sua máquina.
 
 Pré-requisitos
