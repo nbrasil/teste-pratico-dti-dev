@@ -76,16 +76,16 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
             // Inserir 3 Drones Padrão
             const dronesStmt = db.prepare("INSERT OR IGNORE INTO drones (id, capacidade_kg, alcance_km, status, bateria) VALUES (?, ?, ?, ?, ?)");
-            dronesStmt.run(1, 0.5, 10, 'Idle', 100); // Drone pequeno e rápido
-            dronesStmt.run(2, 1.5, 25, 'Idle', 100); // Drone de médio porte
-            dronesStmt.run(3, 2.0, 40, 'Idle', 100); // Drone de carga pesada e longo alcance
+            dronesStmt.run(1, 0.5, 100, 'Idle', 100); // Drone pequeno e rápido
+            dronesStmt.run(2, 1.5, 250, 'Idle', 100); // Drone de médio porte
+            dronesStmt.run(3, 2.0, 400, 'Idle', 100); // Drone de carga pesada e longo alcance
             dronesStmt.finalize();
 
             // Inserir 2 Obstáculos Padrão
             const obstaculosStmt = db.prepare("INSERT OR IGNORE INTO obstaculos (id, nome, x, y, raio) VALUES (?, ?, ?, ?, ?)");
             obstaculosStmt.run(1, 'Mineirão', 80, 80, 15);
             obstaculosStmt.run(2, 'Edifício DTI', -50, -30, 10);
-            obstaculosStmt.run(3, 'Aeroporto da Pampulha', 20, 20, 20);
+            obstaculosStmt.run(3, 'Aeroporto da Pampulha', 40, 40, 20);
             obstaculosStmt.finalize();
 
             console.log('Banco de dados pronto.');
